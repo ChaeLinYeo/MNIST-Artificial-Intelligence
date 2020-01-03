@@ -1,0 +1,291 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Automatically created module for IPython interactive environment\n"
+     ]
+    },
+    {
+     "ename": "KeyboardInterrupt",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-23-719d74b6e99b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     19\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     20\u001b[0m \u001b[0;31m### load MNIST data from https://www.openml.org/d/554\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 21\u001b[0;31m \u001b[0mX\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0my\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfetch_openml\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'mnist_784'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mversion\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mreturn_X_y\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     22\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     23\u001b[0m \u001b[0;31m# shuffle data\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/sklearn/datasets/openml.py\u001b[0m in \u001b[0;36mfetch_openml\u001b[0;34m(name, version, data_id, data_home, target_column, cache, return_X_y)\u001b[0m\n\u001b[1;32m    606\u001b[0m     \u001b[0;31m# obtain the data\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    607\u001b[0m     arff = _download_data_arff(data_description['file_id'], return_sparse,\n\u001b[0;32m--> 608\u001b[0;31m                                data_home)\n\u001b[0m\u001b[1;32m    609\u001b[0m     \u001b[0marff_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0marff\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'data'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    610\u001b[0m     \u001b[0;31m# nominal attributes is a dict mapping from the attribute name to the\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/sklearn/datasets/openml.py\u001b[0m in \u001b[0;36m_download_data_arff\u001b[0;34m(file_id, sparse, data_home, encode_nominal)\u001b[0m\n\u001b[1;32m    373\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0marff_file\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    374\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 375\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_arff_load\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    376\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    377\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/sklearn/datasets/openml.py\u001b[0m in \u001b[0;36mwrapper\u001b[0;34m()\u001b[0m\n\u001b[1;32m     50\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     51\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 52\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     53\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mHTTPError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     54\u001b[0m                 \u001b[0;32mraise\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/sklearn/datasets/openml.py\u001b[0m in \u001b[0;36m_arff_load\u001b[0;34m()\u001b[0m\n\u001b[1;32m    368\u001b[0m                 )\n\u001b[1;32m    369\u001b[0m             \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 370\u001b[0;31m                 arff_file = _arff.loads(response.read().decode('utf-8'),\n\u001b[0m\u001b[1;32m    371\u001b[0m                                         \u001b[0mencode_nominal\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mencode_nominal\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    372\u001b[0m                                         return_type=return_type)\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/gzip.py\u001b[0m in \u001b[0;36mread\u001b[0;34m(self, size)\u001b[0m\n\u001b[1;32m    274\u001b[0m             \u001b[0;32mimport\u001b[0m \u001b[0merrno\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    275\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mOSError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merrno\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mEBADF\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"read() on write-only GzipFile object\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 276\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_buffer\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msize\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    277\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    278\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mread1\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0msize\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m-\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/gzip.py\u001b[0m in \u001b[0;36mread\u001b[0;34m(self, size)\u001b[0m\n\u001b[1;32m    447\u001b[0m         \u001b[0;31m# any data. In this case, retry until we get some data or reach EOF.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    448\u001b[0m         \u001b[0;32mwhile\u001b[0m \u001b[0;32mTrue\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 449\u001b[0;31m             \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_decompressor\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0meof\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    450\u001b[0m                 \u001b[0;31m# Ending case: we've come to the end of a member in the file,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    451\u001b[0m                 \u001b[0;31m# so finish up this member, and read a new gzip header.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+     ]
+    }
+   ],
+   "source": [
+    "import time\n",
+    "import numpy as np\n",
+    "\n",
+    "from sklearn.datasets import fetch_openml # MNIST data\n",
+    "from sklearn.linear_model import LogisticRegression\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.preprocessing import StandardScaler\n",
+    "from sklearn.utils import check_random_state\n",
+    "from sklearn.model_selection import KFold, cross_val_score\n",
+    "from sklearn.metrics import f1_score\n",
+    "from sklearn.metrics import classification_report\n",
+    "\n",
+    "print(__doc__)\n",
+    "\n",
+    "# Turn down for faster convergence\n",
+    "t0 = time.time()\n",
+    "train_size = 60000\n",
+    "test_size = 10000\n",
+    "\n",
+    "### load MNIST data from https://www.openml.org/d/554\n",
+    "X, y = fetch_openml('mnist_784', version=1, return_X_y=True)\n",
+    "\n",
+    "# shuffle data\n",
+    "random_state = check_random_state(0)\n",
+    "permutation = random_state.permutation(X.shape[0])\n",
+    "X = X[permutation]\n",
+    "y = y[permutation]\n",
+    "X = X.reshape((X.shape[0], -1))\n",
+    "\n",
+    "# pick training and test data sets \n",
+    "X_train, X_test, y_train, y_test = train_test_split(X,y,train_size=train_size,test_size=test_size)\n",
+    "\n",
+    "# scale data to have zero mean and unit variance [required by regressor]\n",
+    "scaler = StandardScaler()\n",
+    "X_train = scaler.fit_transform(X_train)\n",
+    "X_test = scaler.transform(X_test)\n",
+    "\n",
+    "# apply logistic regressor with 'saga' solver, C is the inverse regularization strength\n",
+    "clf = LogisticRegression(C=10,\n",
+    "                         multi_class='multinomial',\n",
+    "                         penalty='l2', solver='saga')\n",
+    "\n",
+    "# fit data\n",
+    "clf.fit(X_train, y_train)\n",
+    "# percentage of nonzero weights\n",
+    "sparsity = np.mean(clf.coef_ == 0) * 100\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "###k fold###\n",
+    "kfold = KFold(n_splits=10)\n",
+    "cvs = cross_val_score(clf, X, y, cv=kfold)\n",
+    "print(cvs)\n",
+    "\n",
+    "# AVG = np.mean(clf)\n",
+    "# print(\"avg : \", AVG)\n",
+    "\n",
+    "# Y_pred = clf.predict(X_test)\n",
+    "# cm = metrics.confusion_matrix(Y_true,Y_pred)\n",
+    "# plot_confusion_matrix(cm, [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"], normalize=False)\n",
+    "# f1 = f1_score(y_test, y_pred)\n",
+    "# print(\"f1 score : {0:.4f}\".format(f1))\n",
+    "\n",
+    "# compute accuracy\n",
+    "#score = clf.score(X_test, y_test)\n",
+    "\n",
+    "#display run time\n",
+    "run_time = time.time() - t0\n",
+    "print('Example run in %.3f s' % run_time)\n",
+    "\n",
+    "print(\"Sparsity with L2 penalty: %.2f%%\" % sparsity)\n",
+    "# print(\"Test score with L2 penalty: %.4f\" % score)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "avg :  0.921257142857143\n"
+     ]
+    }
+   ],
+   "source": [
+    "AVG = np.mean(cvs)\n",
+    "print(\"avg : \", AVG)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'pyplot' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-36-9ff204d3627f>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      2\u001b[0m                           \u001b[0mnormalize\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mFalse\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m                           \u001b[0mtitle\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m'Confusion matrix'\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m                           cmap=pyplot.cm.Blues):\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0;31m#     ***\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;31m#     This function prints and plots the confusion matrix.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mNameError\u001b[0m: name 'pyplot' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "def plot_confusion_matrix(cm, classes, \n",
+    "                          normalize=False, \n",
+    "                          title='Confusion matrix', \n",
+    "                          cmap=pyplot.cm.Blues):\n",
+    "#     ***\n",
+    "#     This function prints and plots the confusion matrix.\n",
+    "#     Normalizaton can be applied by setting 'normalize=True'.\n",
+    "#     ***\n",
+    "    \n",
+    "    if normalize:\n",
+    "        cm = cm.astype('float') / cm.sum(axis=1)[:,np.newaxis]\n",
+    "        print(\"Normalized confusion matrix\")\n",
+    "    else:\n",
+    "        print('Confusion matrix, without normalization')\n",
+    "    print(cm)\n",
+    "    \n",
+    "    pyplot.imshow(cm, interpolation = 'nearest', cmap = cmap)\n",
+    "    pyplot.title(title)\n",
+    "    pyplot.colorbar()\n",
+    "    tick_marks = np.arange(len(classes))\n",
+    "    pyplot.xticks(tick_marks, classes, rotation=45)\n",
+    "    pyplot.yticks(tick_marks, classes)\n",
+    "    \n",
+    "    fmt = '.2f' if normalize else 'd'\n",
+    "    thresh = cm.max() / 2.\n",
+    "    for i,j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):\n",
+    "        pyplot.text(j, i, format(cm[i,j], fmt),\n",
+    "                 horizontalalignment = \"center\",\n",
+    "                 color=\"white\" if cm[i,j] > thresh else \"black\")\n",
+    "        \n",
+    "    pyplot.tight_layout()\n",
+    "    pyplot.ylabel('True label')\n",
+    "    pyplot.xlabel('Predicted label')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0.96237624 0.94867257 0.91413882 0.89232354 0.91990172 0.89315998\n",
+      " 0.94419753 0.93301663 0.86759957 0.90891283]\n"
+     ]
+    }
+   ],
+   "source": [
+    "from sklearn.metrics import classification_report\n",
+    "from sklearn import metrics\n",
+    "\n",
+    "# svc = svc.fit(X,Y)\n",
+    "Y_pred = clf.predict(X_test)\n",
+    "cm = metrics.confusion_matrix(y_test,Y_pred)\n",
+    "plot_confusion_matrix(cm, [\"0\",\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"], \n",
+    "                      normalize=False)\n",
+    "y_pred = clf.predict(X_test)\n",
+    "f1 = f1_score(y_test, y_pred, average =None)\n",
+    "print(format(f1))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "              precision    recall  f1-score   support\n",
+      "\n",
+      "           0       0.96      0.96      0.96      1009\n",
+      "           1       0.93      0.97      0.95      1107\n",
+      "           2       0.93      0.90      0.91       987\n",
+      "           3       0.90      0.88      0.89       981\n",
+      "           4       0.90      0.94      0.92       999\n",
+      "           5       0.89      0.89      0.89       885\n",
+      "           6       0.93      0.96      0.94      1001\n",
+      "           7       0.94      0.93      0.93      1057\n",
+      "           8       0.89      0.85      0.87       953\n",
+      "           9       0.91      0.91      0.91      1021\n",
+      "\n",
+      "   micro avg       0.92      0.92      0.92     10000\n",
+      "   macro avg       0.92      0.92      0.92     10000\n",
+      "weighted avg       0.92      0.92      0.92     10000\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(classification_report(y_test, Y_pred))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.9197"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\n",
+    "metrics.f1_score(y_test,Y_pred,average='micro')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
