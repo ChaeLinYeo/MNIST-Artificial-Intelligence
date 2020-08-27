@@ -4,6 +4,7 @@ Artificial intelligence projects using the MNIST dataset and Python, Scikit-lear
 * SVM Classifier + Stochastic Gradient Descen 으로 MNIST의 Multi-Label Classification Problem 해결하기<br>
 * Standard Scaling, PCA, Convolution, Polynomial 전처리작업 및 작업물을 그래프로 도식화시키기<br>
 <br>
+
 ### PBL01
 The given PBL Case is making a system to read the serial numbers of the car parts produced in their factory.<br>
 Namely, It is creating an accurate digit classification system.<br>
